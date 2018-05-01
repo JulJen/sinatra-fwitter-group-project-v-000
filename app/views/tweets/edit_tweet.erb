@@ -6,5 +6,11 @@
 <label>Edit here:</label>
 <form action="/tweets/<%= @tweet.id %>" method="POST">
   <input type="hidden" id="hidden" name="_method" value="patch">
-  <input type="submit" value="Delete Tweet">
+
+  <label>New Content: </label>
+  <input type="text" id="content" name="content">
+
+  <br><br>
+
+  <input type="submit" value="submit">
 </form>
