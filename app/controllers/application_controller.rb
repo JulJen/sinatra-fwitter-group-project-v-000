@@ -46,7 +46,7 @@ class ApplicationController < Sinatra::Base
       @user.save
       session[:user_id] = @user.id
 
-      redirect 'users/tweets'
+      redirect '/tweets'
     end
   end
 
