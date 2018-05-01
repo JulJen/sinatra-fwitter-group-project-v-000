@@ -44,7 +44,6 @@ class ApplicationController < Sinatra::Base
     if params[:username] == "" || params[:email] == "" || params[:password] == ""
       redirect '/signup'
     else
-      redirect '/failure'
       @user = User.create(:username => params[:username], :password => params[:password])
       @user.save
       session[:user_id] = @user.id
