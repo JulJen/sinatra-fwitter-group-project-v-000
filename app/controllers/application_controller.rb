@@ -108,7 +108,7 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-  patch '/figures/:id' do
+  patch '/tweets/:id' do
     if logged_in?
       @tweet = Tweet.find_by_id(params[:id])
       @tweet.update(params[:content])
