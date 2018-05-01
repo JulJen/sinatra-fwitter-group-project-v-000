@@ -74,10 +74,10 @@ class ApplicationController < Sinatra::Base
       redirect to "/tweets/#{@tweet.id}"
     elsif !logged_in?
       redirect '/login'
-    else 
+    else
       redirect to '/tweets/new'
-    end 
-  end 
+    end
+  end
 
 
 
