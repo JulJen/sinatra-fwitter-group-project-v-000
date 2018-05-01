@@ -1,8 +1,6 @@
 <h3>Edit this Tweet:</h3>
 <p><%= @tweet.content %></p>
 
-<br><br>
-
 <label>Edit here:</label>
 <form action="/tweets/<%= @tweet.id %>" method="POST">
   <input type="hidden" id="hidden" name="_method" value="patch">
