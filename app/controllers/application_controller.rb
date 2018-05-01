@@ -109,17 +109,17 @@ class ApplicationController < Sinatra::Base
     if logged_in?
       @tweet = Tweet.find_by_id(params[:id])
       @tweet.update(params[:content])
+      if !params[:content].empty?
+        @tweet.content << Tweet.find_or_create_by(params[:content])
+      else
+        @tweet.save
+        redirect "/tweet/#{@tweet.id}"
+      end
+    else
 
-    if !params[:content].empty?
-      @figure.titles << Title.find_or_create_by(params[:title])
-    end
-    #Edit landmarks
-    if !params[:landmark][:name].empty?
-     @figure.landmarks << Landmark.create(params[:landmark])
-    end
 
-    @figure.save
-    redirect "/figures/#{@figure.id}"
+
+
   end
 
 
