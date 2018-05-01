@@ -98,7 +98,6 @@ class ApplicationController < Sinatra::Base
       if params[:content].empty?
         redirect to '/tweets/new'
       elsif !params[:content] != ""
-        @tweet = Tweet.find_by_id(params[:id])
         redirect to "/tweets/#{@tweet.id}"
       end
     else
