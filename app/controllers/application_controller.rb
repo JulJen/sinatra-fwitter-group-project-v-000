@@ -23,9 +23,9 @@ class ApplicationController < Sinatra::Base
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect 'tweets/tweets'
+      redirect '/tweets'
     else
-      redirect 'users/signup'
+      redirect 'users/failure'
     end
   end
 
