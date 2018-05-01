@@ -119,13 +119,9 @@ class ApplicationController < Sinatra::Base
         redirect "/tweet/#{@tweet.id}"
       end
     else
-
-
-
-
+      redirect '/login'
+    end
   end
-
-
 
 
   helpers do
