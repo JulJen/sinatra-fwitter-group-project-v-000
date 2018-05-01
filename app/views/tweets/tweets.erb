@@ -6,4 +6,6 @@
 
 <% @tweets.each do |tweet| %>
   <%= tweet.content %>
+  <% if tweet.content.empty? %>
+  <p> Doesn't look like you have any tweets yet, create one <a href="/tweets/new">here!</p>
 <% end %>
