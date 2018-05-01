@@ -1,5 +1,5 @@
 require './config/environment'
 
-class TweersController < Sinatra::Base
+class TweetsController < Sinatra::Base
 
 end
