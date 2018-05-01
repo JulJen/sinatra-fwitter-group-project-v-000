@@ -10,7 +10,7 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "secret_fwitter"
   end
 
-  get '/index' do
+  get '/' do
     erb :index
   end
 
@@ -24,4 +24,4 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-end 
+end
