@@ -98,7 +98,7 @@ class ApplicationController < Sinatra::Base
       if params[:content].empty?
         redirect to '/tweets/new'
       elsif !params[:content] != ""
-        redirect to "/tweets/#{@tweet.id}"
+        redirect "/tweets/show_tweet"
       end
     else
       redirect to '/login'
