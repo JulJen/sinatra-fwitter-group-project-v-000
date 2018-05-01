@@ -1,7 +1,6 @@
 <h3> Here is your latest tweet!</h3>
 <p><%= @tweet.content %></p>
 
-<label>Delete Tweet</label>
 <form action="/tweets/<%= @tweet.id %>/delete" method="POST">
 
   <input type="hidden" id="hidden" name="_method" value="DELETE">
