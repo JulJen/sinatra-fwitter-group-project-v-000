@@ -8,9 +8,11 @@
 
 <br><br>
 
-<p>See all your tweets <a href='/tweets'>here.</a>
+
 
 <form action="/tweets/<%= @tweet.id %>" method="POST">
   <input id="hidden" type="hidden" name="_method" value="patch">
   <input type="submit" value="Edit Tweet">
 </form>
+
+<p>See all your tweets <a href='/tweets'>here.</a>
