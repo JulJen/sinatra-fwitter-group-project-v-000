@@ -5,7 +5,7 @@
 <h2> Your Tweets: </h2>
 
 <% @tweets.each do |tweet| %>
-  <li><%= tweet.content %></li>
+  <li><a href='/tweets/<%= tweet.id %>'><%= tweet.content %></li>
 <% end %>
 
 <% if @tweets.length == 0 %>
