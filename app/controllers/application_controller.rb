@@ -128,12 +128,12 @@ class ApplicationController < Sinatra::Base
         @tweet.delete
         redirect '/tweets'
       else
-        redirect '/tweets'
+        redirect "/tweet/#{@tweet.id}"
       end
     else
       redirect "/login"
     end
-  end 
+  end
 
 
   helpers do
