@@ -10,6 +10,8 @@
 
 <p>See all your tweets <a href='/tweets'>here.</a>
 
+<% Title.all.each do |title| %>
 <p><a href="/tweets/<%= @tweet.id %>/edit"></a>Edit Tweet</p>
+<% end %>
 
 </form>
