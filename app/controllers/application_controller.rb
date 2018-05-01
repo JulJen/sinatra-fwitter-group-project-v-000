@@ -37,7 +37,6 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/signup' do
-
     if logged_in?
       redirect '/tweets'
     end
