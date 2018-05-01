@@ -30,7 +30,7 @@ class ApplicationController < Sinatra::Base
     elsif user.save
       redirect "users/login"
     else
-      redirect "/failure"
+      redirect "users/failure"
     end
   end
 
