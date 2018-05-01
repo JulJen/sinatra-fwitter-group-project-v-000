@@ -34,8 +34,6 @@ class ApplicationController < Sinatra::Base
       redirect '/tweets'
     elsif !logged_in?
       erb :'/create_user'
-    else
-      erb :'users/show'
     end
   end
 
