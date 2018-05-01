@@ -109,8 +109,8 @@ class ApplicationController < Sinatra::Base
     if logged_in?
       @tweet = Tweet.find_by_id(params[:id])
       @tweet.update(params[:content])
-    #Edit titles
-    if !params[:title][:name].empty?
+
+    if !params[:content].empty?
       @figure.titles << Title.find_or_create_by(params[:title])
     end
     #Edit landmarks
