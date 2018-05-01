@@ -23,7 +23,7 @@ class ApplicationController < Sinatra::Base
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect '/tweets'
+      erb  :'users/tweets'
     else
       redirect 'users/failure'
     end
