@@ -33,7 +33,7 @@ class ApplicationController < Sinatra::Base
     if logged_in?
       redirect '/tweets'
     end
-    erb :'users/show'
+    erb :'/show'
   end
 
   post '/signup' do
@@ -46,7 +46,7 @@ class ApplicationController < Sinatra::Base
     else
       @user = User.create(:username => params[:username], :password => params[:password])
       session[:user_id] = @user.id
-      
+
       redirect '/tweets'
     end
   end
