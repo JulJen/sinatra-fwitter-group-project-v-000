@@ -1,10 +1,9 @@
 <h3> Here is your latest tweet!</h3>
 <p><%= @tweet.content %></p>
 
-<form action="/tweets/<%= @tweet.id %>" method="POST">
-  <input id="hidden" type="hidden" name="_method" value="patch">
-  <input type="submit" value="Edit Tweet">
-</form>
+<% @tweets.each do |tweet| %>
+  <li><a href='/tweets/<%= tweet.id %>/edit'><%= tweet.content %></li>
+<% end %>
 
 <br><br>
 
