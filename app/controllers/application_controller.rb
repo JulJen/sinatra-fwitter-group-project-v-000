@@ -70,7 +70,7 @@ class ApplicationController < Sinatra::Base
       session.clear
       redirect '/login'
     else
-      redirect '/tweets'
+      erb :'users/tweets'
     end
   end
 
