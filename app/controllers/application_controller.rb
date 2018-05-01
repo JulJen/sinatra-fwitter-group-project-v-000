@@ -61,12 +61,11 @@ class ApplicationController < Sinatra::Base
 
   get '/tweets' do
     if logged_in?
-      @tweets = Tweets.all
       if @tweets.content.length == 0
         redirect 'create/tweet'
       elsif
         erb :'tweets/tweets'
-      end 
+      end
     else
       redirect '/login'
     end
