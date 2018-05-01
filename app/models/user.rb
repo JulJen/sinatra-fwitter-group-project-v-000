@@ -4,8 +4,6 @@ class User < ActiveRecord::Base
 
   def slug
     self.username.gsub(" ", "-").downcase
-    # obj = self.name.downcase
-    # obj.gsub(" ", "-")
   end
 
   def self.find_by_slug(slug)
