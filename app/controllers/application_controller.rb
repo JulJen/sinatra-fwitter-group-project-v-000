@@ -96,7 +96,7 @@ class ApplicationController < Sinatra::Base
     if logged_in?
       @tweet = Tweet.create(content: params[:content], user_id: current_user.id)
       if !params[:content].empty?
-        erb :'/tweets/show_tweet'
+        redirect to "/tweets/#{@tweet.id}"
       else
         redirect to '/tweets/new'
       end
