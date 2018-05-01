@@ -97,7 +97,7 @@ class ApplicationController < Sinatra::Base
     else
       redirect '/login'
     end
-    
+
   end
 
 
