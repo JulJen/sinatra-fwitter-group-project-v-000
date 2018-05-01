@@ -105,6 +105,23 @@ class ApplicationController < Sinatra::Base
       erb :'/tweets/edit_tweet'
   end
 
+  patch '/figures/:id' do
+    if logged_in?
+      @tweet = Tweet.find_by_id(params[:id])
+      @tweet.update(params[:content])
+    #Edit titles
+    if !params[:title][:name].empty?
+      @figure.titles << Title.find_or_create_by(params[:title])
+    end
+    #Edit landmarks
+    if !params[:landmark][:name].empty?
+     @figure.landmarks << Landmark.create(params[:landmark])
+    end
+
+    @figure.save
+    redirect "/figures/#{@figure.id}"
+  end
+
 
 
 
