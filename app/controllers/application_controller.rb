@@ -64,6 +64,7 @@ class ApplicationController < Sinatra::Base
       if @tweets.content.length == 0
         redirect 'create/tweet'
       elsif
+        @tweets = Tweets.all
         erb :'tweets/tweets'
       end
     else
