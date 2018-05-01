@@ -2,4 +2,11 @@
 
 <h3>Tweet <a href="/tweets/new">here!</a></h3>
 
-<p><a href="users/logout">Log Out</a></p>
+<h3>Your Tweets: </h3>
+<% @user.tweets.each do |tweet| %>
+  <li><a href="/tweets/<%= tweet.id %>"><%= tweet.content %></a></li>
+<% end %>
+
+<br><br>
+
+<p><a href="/logout">Log Out</a></p>
