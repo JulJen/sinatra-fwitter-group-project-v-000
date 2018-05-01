@@ -10,7 +10,7 @@
 
 <p>See all your tweets <a href='/tweets'>here.</a>
 
-<% Tweets.all.each do |tweet| %>
+<% @tweets.each do |tweet| %>
 <p><a href="/tweets/<%= @tweet.id %>/edit"></a>Edit Tweet</p>
 <% end %>
 
