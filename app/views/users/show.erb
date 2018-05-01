@@ -2,6 +2,8 @@
 
 <h3>Tweet <a href="/tweets/new">here!</a></h3>
 
+<br><br>
+
 <h3>Your Tweets: </h3>
 <% @user.tweets.each do |tweet| %>
   <li><a href="/tweets/<%= tweet.id %>"><%= tweet.content %></a></li>
