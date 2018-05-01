@@ -24,7 +24,7 @@ class ApplicationController < Sinatra::Base
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect '/tweets'
-    elsif !logged_in?
+    else
       redirect '/failure'
     end
   end
