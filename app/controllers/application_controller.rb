@@ -31,9 +31,9 @@ class ApplicationController < Sinatra::Base
 
   get '/signup' do
     if logged_in?
-      redirect 'users/tweets'
+      redirect '/tweets'
     elsif !logged_in?
-      redirect 'users/create_user'
+      erb :'/create_user'
     else
       erb :'users/show'
     end
