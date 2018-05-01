@@ -114,7 +114,7 @@ class ApplicationController < Sinatra::Base
       @tweet.update(content: params[:content])
       if !params[:content].empty?
         @tweet.save
-        redirect "/tweet/#{@tweet.id}"
+        redirect "/tweets/#{@tweet.id}"
       end
     else
       redirect '/login'
