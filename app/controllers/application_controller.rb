@@ -92,7 +92,7 @@ class ApplicationController < Sinatra::Base
 
   get '/tweets/:id' do
     if logged_in?
-      erb :'tweets/create_tweet'
+      erb :'tweets/show_tweet'
     else
       redirect '/login'
     end
