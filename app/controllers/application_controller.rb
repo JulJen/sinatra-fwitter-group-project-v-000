@@ -34,10 +34,13 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-  
-  get "/logout" do
+  get '/failure' do
+   erb :'users/failure'
+ end
+ 
+  get '/logout' do
     session.clear
-    redirect "/"
+    redirect '/'
   end
 
 
