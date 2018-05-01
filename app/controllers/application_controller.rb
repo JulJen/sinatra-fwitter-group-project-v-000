@@ -67,11 +67,11 @@ class ApplicationController < Sinatra::Base
 
   get '/logout' do
     if logged_in?
-      session.clear
-      redirect '/'
+      session.destroy
+      redirect '/login'
     else
       redirect '/login'
-    end 
+    end
   end
 
   get '/tweets' do
