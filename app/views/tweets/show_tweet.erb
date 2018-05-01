@@ -1,7 +1,7 @@
 <h3> Here is your latest tweet!</h3>
 <p><%= @tweet.content %></p>
 
-<% @tweets.each do |tweet| %>
+<% @tweet.each do |tweet| %>
   <li><a href='/tweets/<%= tweet.id %>/edit'><%= tweet.content %></li>
 <% end %>
 
