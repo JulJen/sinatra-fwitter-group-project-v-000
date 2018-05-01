@@ -130,6 +130,8 @@ class ApplicationController < Sinatra::Base
       if !params[:content].empty?
         @tweet.save
         redirect "/tweets/#{@tweet.id}"
+      else
+        redirect "/tweets/#{@tweet.id}/edit"
       end
     else
       redirect '/login'
