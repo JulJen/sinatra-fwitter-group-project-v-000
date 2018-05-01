@@ -83,7 +83,7 @@ class ApplicationController < Sinatra::Base
       if params[:content] != ""
         redirect to '/tweets/new'
       else
-        redirect to "/tweets/#{@tweet.id}"  
+        redirect to "/tweets/#{@tweet.id}"
       end
     elsif !logged_in?
       redirect to '/login'
