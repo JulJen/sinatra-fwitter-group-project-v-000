@@ -111,7 +111,7 @@ class ApplicationController < Sinatra::Base
   patch '/tweets/:id' do
     if logged_in?
       @tweet = Tweet.find_by_id(params[:id])
-      @tweet.update(params[:content])
+      @tweet.update(content: params[:content])
       if !params[:content].empty?
         @tweet.content << Tweet.find_or_create_by(params[:content])
       else
