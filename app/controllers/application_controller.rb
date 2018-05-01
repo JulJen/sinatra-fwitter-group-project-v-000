@@ -66,7 +66,7 @@ class ApplicationController < Sinatra::Base
       erb :'/tweets/tweets'
     else
       redirect '/login'
-    end 
+    end
   end
 
   get '/tweets/new' do
@@ -80,13 +80,28 @@ class ApplicationController < Sinatra::Base
   post '/tweets' do
     if logged_in? && @tweet.valid?
       @tweet = current_user.tweets.create(content: params[:content])
-      redirect to "/tweets/#{@tweet.id}"
-    elsif !logged_in?
-      redirect '/login'
+      if @tweet.save
+        redirect to "/tweets/#{@tweet.id}"
+      else
+        redirect to '/tweets/new'
+      end
     else
-      redirect to '/tweets/new'
+      post '/tweets' do
+    if logged_in?
+      if params[:content] == ""
+        redirect to '/tweets/new'
+      else
+        @tweet = current_user.tweets.build(content: params[:content])
+        if @tweet.save
+          redirect to "/tweets/#{@tweet.id}"
+        else
+          redirect to '/tweets/new'
+        end
+      end
+    else
+      redirect to '/login'
     end
-  end
+  end 
 
 
 
