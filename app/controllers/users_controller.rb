@@ -1,3 +1,3 @@
-class TweetsController < Sinatra::Base
+class UsersController < Sinatra::Base
 
 end
