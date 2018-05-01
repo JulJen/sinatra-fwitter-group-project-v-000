@@ -66,6 +66,7 @@ class ApplicationController < Sinatra::Base
         redirect 'create/tweet'
       elsif
         erb :'tweets/tweets'
+      end 
     else
       redirect '/login'
     end
